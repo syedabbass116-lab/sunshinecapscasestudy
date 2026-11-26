@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SunshineCapsco: from $0 to $50K a month in 12 months</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#fbfbf8;--ink:#0a0a0a;--mut:#585862;--card:#fff;--line:#dcdcd4;--pink:#ff7287;--acc:#c91f45;--sun:#ffe45c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#090a12;--ink:#f4f4ee;--mut:#a3a3b0;--card:#12141f;--line:#262a3a;--acc:#ff8da0}}
+:root[data-theme="dark"]{--bg:#090a12;--ink:#f4f4ee;--mut:#a3a3b0;--card:#12141f;--line:#262a3a;--acc:#ff8da0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:400 17px/1.65 Poppins,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-weight:700;line-height:1.08;letter-spacing:-.025em;margin:0}
+p{margin:0 0 1.1em;max-width:62ch}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.ph{outline:2px dashed #e0a100;outline-offset:2px;border-radius:4px;background:rgba(255,228,92,.35);color:inherit;padding:0 4px}
+
+/* hero */
+.hero{position:relative;background:var(--pink);color:#0a0a0a;overflow:hidden;padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,78px);font-weight:800}
+.hero p.lead{font-size:19px;color:#1a1a1a;margin-top:24px}
+.byline{font-size:14px;color:#2a2a2a;margin-top:28px}
+.meter{display:inline-flex;align-items:baseline;gap:10px;margin-top:30px;background:var(--sun);color:#0a0a0a;border-radius:16px;padding:12px 22px}
+.meter b{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.meter span{font-size:15px;font-weight:600}
+.stage{perspective:900px;height:360px;display:grid;place-items:center;position:relative;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.tilt3d{transform-style:preserve-3d;transition:transform .25s ease-out;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.cube{--s:190px;width:var(--s);height:var(--s);position:relative;transform-style:preserve-3d;animation:spin 16s linear infinite}
+@keyframes spin{from{transform:rotateX(-22deg) rotateY(0)}to{transform:rotateX(-22deg) rotateY(360deg)}}
+.face{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-weight:800;font-size:24px;line-height:1.1;letter-spacing:-.02em;border:2px solid #0a0a0a;backface-visibility:hidden;padding:12px}
+.face small{display:block;font-size:12px;font-weight:500;margin-top:6px;letter-spacing:0;opacity:.8}
+.f1{transform:translateZ(95px);background:#fff;color:#0a0a0a}
+.f2{transform:rotateY(90deg) translateZ(95px);background:var(--sun);color:#0a0a0a}
+.f3{transform:rotateY(180deg) translateZ(95px);background:#0a0a0a;color:#fff}
+.f4{transform:rotateY(-90deg) translateZ(95px);background:#fff;color:#c91f45}
+.f5{transform:rotateX(90deg) translateZ(95px);background:var(--sun);color:#0a0a0a}
+.f6{transform:rotateX(-90deg) translateZ(95px);background:#0a0a0a;color:#fff}
+.shadow{position:absolute;bottom:18px;width:190px;height:26px;border-radius:50%;background:rgba(0,0,0,.25);filter:blur(10px)}
+
+/* hero motion */
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(440px circle at var(--mx,72%) var(--my,35%),rgba(255,255,255,.6),transparent 62%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.orb{position:absolute;display:block;border-radius:50%;pointer-events:none;transition:translate .5s ease-out;animation:float 7s ease-in-out infinite}
+.o1{width:150px;height:150px;background:var(--sun);left:3%;top:6%}
+.o2{width:90px;height:90px;border:7px solid #0a0a0a;right:7%;top:12%;animation-delay:-2s}
+.o3{width:230px;height:230px;background:rgba(255,255,255,.4);right:32%;bottom:-100px;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-24px) rotate(10deg)}}
+.hero h1{perspective:700px}
+.w{display:inline-block;opacity:0;transform-origin:50% 100%;transform:translateY(46px) rotateX(-80deg);animation:wIn .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * .1s + .15s)}
+@keyframes wIn{to{opacity:1;transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fade{to{opacity:1}}
+.hero p.lead,.hero .byline{opacity:0;animation:up .8s ease forwards}
+.hero p.lead{animation-delay:1s}.hero .byline{animation-delay:1.6s}
+.meter{position:relative;overflow:hidden;opacity:0;animation:up .8s .8s ease forwards}
+.meter::after{content:"";position:absolute;left:0;bottom:0;height:5px;background:#0a0a0a;width:0;animation:bar 3.2s .5s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes bar{to{width:100%}}
+.meter.done b{animation:pop .5s ease}
+@keyframes pop{40%{transform:scale(1.14)}}
+.hero .hero-btn{background:#0a0a0a;color:#fff;margin-top:26px;opacity:0;animation:fade .8s 1.3s ease forwards}
+.hero .hero-btn:hover{background:var(--sun);color:#0a0a0a}
+.tilt3d{position:relative;transition:transform .12s linear;transform:rotateX(calc(var(--rx,0deg) + var(--hx,0deg))) rotateY(calc(var(--ry,0deg) + var(--hy,0deg)))}
+.tilt3d.drag{transition:none}
+.stage.grab{cursor:grabbing}
+.shadow{left:50%;transform:translateX(-50%)}
+.hint{position:absolute;bottom:-4px;left:0;right:0;text-align:center;font-size:13px;font-weight:600;margin:0;max-width:none;opacity:.75}
+.ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;animation:ringspin 22s linear infinite}
+@keyframes ringspin{to{transform:rotateY(360deg)}}
+.chipw{position:absolute;left:0;top:0;transform-style:preserve-3d;transform:rotateY(var(--a)) translateZ(190px)}
+.chip{font:600 14px Poppins,system-ui,sans-serif;background:#0a0a0a;color:#fff;border:0;border-radius:999px;padding:9px 18px;cursor:pointer;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.25);transform:translate(-50%,-50%) rotateY(calc(var(--a) * -1));animation:unspin 22s linear infinite;transition:background .2s,color .2s}
+@keyframes unspin{from{transform:translate(-50%,-50%) rotateY(calc(var(--a) * -1))}to{transform:translate(-50%,-50%) rotateY(calc(var(--a) * -1 - 360deg))}}
+.chip:hover,.chip:focus-visible{background:var(--sun);color:#0a0a0a;outline:3px solid #0a0a0a}
+.stage:hover .ring,.stage:hover .chip{animation-play-state:paused}
+@media (max-width:860px){.chipw{transform:rotateY(var(--a)) translateZ(150px)}}
+@media (prefers-reduced-motion:reduce){.w,.hero p.lead,.hero .byline,.meter,.hero .hero-btn{opacity:1!important;transform:none!important}.meter::after{width:100%}}
+/* sections */
+section{padding:88px 0}
+section h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:28px;max-width:20ch}
+.two{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.two h2{margin-bottom:0}
+.band{background:var(--card);border-block:1px solid var(--line)}
+.pull{font-size:clamp(22px,3vw,32px);font-weight:600;line-height:1.3;letter-spacing:-.02em;max-width:26ch;border-left:6px solid var(--pink);padding-left:22px;margin:36px 0 0}
+
+/* engines */
+.engines{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;perspective:1100px;margin-top:40px}
+.eng{background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:28px 26px;transform-style:preserve-3d;transition:transform .2s ease-out,box-shadow .2s;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:10px 10px 0 var(--ink)}
+.eng:hover{box-shadow:16px 16px 0 var(--pink)}
+.eng h3{font-size:26px;margin-bottom:4px}
+.eng .role{font-size:14px;font-weight:600;color:var(--acc);margin-bottom:16px;display:block}
+.eng ul{margin:0;padding-left:18px;font-size:15px;line-height:1.55;color:var(--mut)}
+.eng li{margin-bottom:9px}
+.eng li b{color:var(--ink);font-weight:600}
+.eng .badge{transform:translateZ(40px);display:inline-block;background:var(--sun);color:#0a0a0a;font-weight:700;font-size:13px;border-radius:999px;padding:3px 12px;margin-bottom:14px}
+
+/* curve */
+.curve{background:var(--pink);color:#0a0a0a}
+.curve h2{max-width:16ch}
+.chart{margin-top:30px;background:rgba(255,255,255,.45);border-radius:22px;padding:22px 22px 14px;overflow-x:auto}
+.chart svg{width:100%;min-width:560px;height:auto;display:block}
+.chart path.line{fill:none;stroke:#0a0a0a;stroke-width:5;stroke-linecap:round;stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 2.6s cubic-bezier(.3,.7,.2,1)}
+.chart.in path.line{stroke-dashoffset:0}
+.chart path.fill{fill:rgba(255,228,92,.7);opacity:0;transition:opacity 1.2s 1.6s}
+.chart.in path.fill{opacity:1}
+.chart text{font-family:Poppins,system-ui,sans-serif;fill:#0a0a0a;font-size:15px}
+.cnote{font-size:13px;opacity:.85;margin:12px 0 0}
+
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:3px solid var(--ink)}
+.ph4{padding:26px 22px 8px 0}
+.ph4 h3{font-size:21px;margin-bottom:4px}
+.ph4 .m{font-size:14px;font-weight:600;color:var(--acc);display:block;margin-bottom:12px}
+.ph4 p{font-size:15px;color:var(--mut);margin-bottom:.8em}
+.ph4 .goal{font-size:14px;font-weight:600;color:var(--ink)}
+
+/* results */
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.res div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.res b{display:block;font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.res span{font-size:14px;color:var(--mut)}
+.res .big{grid-column:span 3;background:var(--sun);border-color:var(--sun);color:#0a0a0a;display:flex;flex-wrap:wrap;gap:10px 28px;align-items:baseline}
+.res .big b{font-size:clamp(46px,8vw,92px)}
+.res .big span{color:#2b2b2b;font-size:17px;font-weight:500}
+
+.lessons{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:36px}
+.lessons h3{font-size:21px;margin-bottom:10px}
+.lessons p{font-size:15px;color:var(--mut)}
+
+blockquote{margin:0;font-size:clamp(22px,3vw,34px);font-weight:600;line-height:1.3;letter-spacing:-.02em;max-width:28ch}
+cite{display:block;margin-top:18px;font-size:15px;font-style:normal;color:var(--mut);font-weight:500}
+
+.cta{background:var(--ink);color:var(--bg);text-align:left}
+.cta h2{max-width:18ch}
+.cta p{color:inherit;opacity:.8}
+.btn{display:inline-block;background:var(--sun);color:#0a0a0a;font-weight:700;font-size:17px;border-radius:14px;padding:16px 30px;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+footer{padding:28px 0 40px;font-size:13px;color:var(--mut)}
+
+@media (max-width:860px){
+ .hero .wrap,.two{grid-template-columns:1fr}
+ .engines,.lessons{grid-template-columns:1fr}
+ .tl{grid-template-columns:1fr 1fr}
+ .res{grid-template-columns:1fr 1fr}.res .big{grid-column:span 2}
+ .stage{height:300px}.cube{--s:150px}
+ .f1{transform:translateZ(75px)}.f2{transform:rotateY(90deg) translateZ(75px)}.f3{transform:rotateY(180deg) translateZ(75px)}
+ .f4{transform:rotateY(-90deg) translateZ(75px)}.f5{transform:rotateX(90deg) translateZ(75px)}.f6{transform:rotateX(-90deg) translateZ(75px)}
+ .face{font-size:19px}.shadow{width:150px}
+}
+@media (max-width:520px){.tl,.res{grid-template-columns:1fr}.res .big{grid-column:span 1}section{padding:64px 0}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.chart path.line{stroke-dashoffset:0}.chart path.fill{opacity:1}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <i class="orb o1" data-d="40"></i><i class="orb o2" data-d="-60"></i><i class="orb o3" data-d="90"></i>
+ <div class="wrap">
+  <div>
+   <h1 aria-label="From $0 to $50K a month in one year."><span class="w" aria-hidden="true" style="--i:0">From</span> <span class="w" aria-hidden="true" style="--i:1">$0</span> <span class="w" aria-hidden="true" style="--i:2">to</span> <span class="w" aria-hidden="true" style="--i:3">$50K</span> <span class="w" aria-hidden="true" style="--i:4">a</span> <span class="w" aria-hidden="true" style="--i:5">month</span> <span class="w" aria-hidden="true" style="--i:6">in</span> <span class="w" aria-hidden="true" style="--i:7">one</span> <span class="w" aria-hidden="true" style="--i:8">year.</span></h1>
+   <p class="lead">How SunshineCapsco, a scrub cap brand designed by a dental hygienist, went from zero sales to a store that sells every single day, with SEO, paid ads and content working as one system.</p>
+   <div class="meter" aria-label="Monthly revenue reached $50,000"><b id="count">$0</b><span>per month, by month 12</span></div>
+   <a class="btn hero-btn" href="https://calendly.com/amadigimedia/30min" target="_blank" rel="noopener">Book a free 30-min call</a>
+   <p class="byline">A case study by Arsheen Abbas</p>
+  </div>
+  <div class="stage">
+   <div class="tilt3d" id="hero3d">
+    <div class="ring"><div class="chipw" style="--a:0deg"><button class="chip" data-go="engines">SEO</button></div><div class="chipw" style="--a:120deg"><button class="chip" data-go="engines">Paid ads</button></div><div class="chipw" style="--a:240deg"><button class="chip" data-go="engines">Content</button></div></div>
+    <div class="cube" aria-hidden="true">
+     <div class="face f1">Ponytail<small>long, thick hair</small></div>
+     <div class="face f2">Euro<small>medium-length hair</small></div>
+     <div class="face f3">Bouffant<small>extra room and volume</small></div>
+     <div class="face f4">Classic<small>short hair</small></div>
+     <div class="face f5">$0<small>day one</small></div>
+     <div class="face f6">$50K<small>per month</small></div>
+    </div>
+   </div>
+   <div class="shadow"></div><p class="hint" aria-hidden="true">Drag to spin the cube</p>
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap two">
+  <h2>She designed the cap. Nobody had found it yet.</h2>
+  <div>
+   <p>When she came to us, she had done the hard part. As a dental hygienist, she knew the problem from the inside: a scrub cap that never fit real hair and never felt like her. So she designed one that does. Four fits, satin-lined options, and prints with real personality.</p>
+   <p>What she did not have was a single stranger finding it. Nurses, surgeons and dental teams were searching for exactly this cap, and none of them knew SunshineCapsco existed. No search traffic. No ad account that made money. No content beyond posting when she remembered. The revenue line sat flat on zero.</p>
+   <p>She did not need more hustle. She needed a system that brought the right people to the store, every day, and gave them a reason to buy.</p>
+   <p class="pull">Revenue at the start: $0. Orders per day: none. Strangers who knew the brand existed: almost nobody.</p>
+  </div>
+ </div>
+</section>
+
+<section class="band">
+ <div class="wrap">
+  <h2>Most new brands pick one channel and pray.</h2>
+  <div class="two" style="margin-top:8px">
+   <div></div>
+   <div>
+    <p>Ads alone rent your customers: the day you stop spending, the sales stop. SEO alone is too slow for a brand that needs cash this quarter. Content alone looks beautiful and sells nothing.</p>
+    <p>So we did not choose. We built three engines that feed each other. Ads buy speed and teach us what people respond to. SEO turns that demand into an asset that keeps paying. Content builds the trust that makes a nurse on a 12-hour shift click “buy”.</p>
+   </div>
+  </div>
+  <div class="engines" id="engines">
+   <article class="eng">
+    <span class="badge">Speed</span>
+    <h3>Paid ads</h3><span class="role">Buy learning fast, then scale what works</span>
+    <ul>
+     <li><b>Tracking first.</b> Pixel, GA4 and server-side events were verified before a single dollar was spent.</li>
+     <li><b>Creative testing in batches.</b> Meta prospecting tested one variable at a time: funny and sassy vs cute and playful, fit-first hooks vs print-first hooks.</li>
+     <li><b>Job-specific angles.</b> Anesthesia, dental, labor and delivery and respiratory prints each got their own ads.</li>
+     <li><b>Google Shopping and search</b> for people already typing “ponytail scrub cap” or “bouffant scrub cap”.</li>
+     <li><b>A retargeting ladder</b> for visitors, cart abandoners and past buyers.</li>
+     <li><b>One scaling rule.</b> Raise budget only on proven winners. Plan seasonal drops, from Halloween to Christmas, months ahead.</li>
+    </ul>
+   </article>
+   <article class="eng">
+    <span class="badge">Compounding</span>
+    <h3>SEO</h3><span class="role">Build an asset that sells while she sleeps</span>
+    <ul>
+     <li><b>Technical audit and fixes:</b> site speed, indexing, crawl paths and collection structure.</li>
+     <li><b>Keyword map around fit.</b> Ponytail, euro, bouffant, satin-lined and men’s scrub caps each got a page built to rank.</li>
+     <li><b>Specialty collection pages</b> for the jobs people search by: anesthesia, dental, labor and delivery, respiratory.</li>
+     <li><b>Seasonal pages published early</b>, so they ranked before the holiday rush instead of after it.</li>
+     <li><b>Fit guides</b> that answer “which scrub cap fits my hair?”, linked to the products that solve it.</li>
+     <li><b>Internal linking and schema</b> for products, reviews and FAQs.</li>
+    </ul>
+   </article>
+   <article class="eng">
+    <span class="badge">Trust</span>
+    <h3>Content marketing</h3><span class="role">Turn browsers into buyers and buyers into fans</span>
+    <ul>
+     <li><b>The founder story</b> told everywhere: a dental hygienist who fixed the cap she could not find.</li>
+     <li><b>Short-form video</b> on TikTok and Instagram: fit tests on real hair, print reveals, shift-life humor.</li>
+     <li><b>Reviews and UGC</b> from healthcare workers placed on product pages, where doubt happens.</li>
+     <li><b>Email flows:</b> welcome offer, abandoned cart, post-purchase, win-back and new-drop alerts.</li>
+     <li><b>Ambassadors</b> from the nursing and surgical community sharing caps they actually wear.</li>
+    </ul>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="curve">
+ <div class="wrap">
+  <h2>Twelve months. One direction.</h2>
+  <div class="chart" id="chart">
+   <svg viewBox="0 0 800 300" role="img" aria-label="Revenue grows from $0 in month 1 to $50,000 per month in month 12">
+    <line x1="50" y1="250" x2="770" y2="250" stroke="#0a0a0a" stroke-width="2"/>
+    <path class="fill" d="M50 250 C200 248 330 235 440 190 C560 140 650 80 770 40 L770 250 Z"/>
+    <path class="line" d="M50 250 C200 248 330 235 440 190 C560 140 650 80 770 40"/>
+    <circle cx="50" cy="250" r="8" fill="#ffe45c" stroke="#0a0a0a" stroke-width="3"/><circle cx="770" cy="40" r="10" fill="#ffe45c" stroke="#0a0a0a" stroke-width="3"/>
+    <text x="50" y="278">Month 1</text><text x="740" y="278">Month 12</text>
+    <text x="64" y="236" font-weight="700">$0</text>
+    <text x="640" y="30" font-weight="700" font-size="22">$50K per month</text>
+   </svg>
+  </div>
+  <p class="cnote">Start and end points are real. The curve between them shows the direction of growth, not monthly figures.</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>How the year unfolded.</h2>
+  <div class="tl">
+   <div class="ph4"><h3>Foundation</h3><span class="m">Months 1 to 3</span>
+    <p>Fixed tracking. Audited the site. Sharpened the offer and the brand story. Rebuilt product pages around fit guidance. Launched the first creative batches.</p>
+    <p class="goal">Goal: first steady sales and a clear read on what converts.</p></div>
+   <div class="ph4"><h3>Traction</h3><span class="m">Months 4 to 6</span>
+    <p>Ad winners emerged and budgets followed them. First style and specialty pages got indexed and began ranking. Email flows went live.</p>
+    <p class="goal">Goal: a repeatable acquisition loop.</p></div>
+   <div class="ph4"><h3>Scale</h3><span class="m">Months 7 to 9</span>
+    <p>New audiences and placements. Fit guides and seasonal pages published on a steady schedule. Conversion tests on the highest-traffic pages.</p>
+    <p class="goal">Goal: grow spend without losing efficiency.</p></div>
+   <div class="ph4"><h3>Compounding</h3><span class="m">Months 10 to 12</span>
+    <p>Organic search carried a growing share of orders, and the holiday drops landed on pages that were already ranking. Paid got more efficient. Repeat customers started to show up on their own.</p>
+    <p class="goal">Goal: $50K a month, less dependent on any one channel.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>The brand today.</h2>
+  <div class="res">
+   <div><b>4.87</b><span>average rating across 7,900+ reviews</span></div>
+   <div><b>185,000+</b><span>scrub caps shipped</span></div>
+   <div><b>400+</b><span>cap listings across four fits</span></div>
+  </div>
+  <p class="cnote" style="color:var(--mut);margin-top:18px">As shown on <a href="https://www.sunshinecaps.com/" style="color:var(--acc)">sunshinecaps.com</a>. These are the brand’s lifetime numbers today, not results from the first twelve months alone.</p>
+ </div>
+</section>
+
+<section class="band">
+ <div class="wrap">
+  <h2>The result.</h2>
+  <div class="res">
+   <div class="big"><b>$0 to $50K</b><span>monthly revenue in 12 months</span></div>
+   <div><b><span class="ph">[X]%</span></b><span>growth in organic search traffic</span></div>
+   <div><b><span class="ph">[X]x</span></b><span>blended return on ad spend</span></div>
+   <div><b><span class="ph">[X]%</span></b><span>of revenue from email flows</span></div>
+   <div><b><span class="ph">[X]</span></b><span>orders per month at month 12</span></div>
+   <div><b><span class="ph">[X]%</span></b><span>repeat customer rate</span></div>
+   <div><b><span class="ph">[X]</span></b><span>page-one keyword rankings</span></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>What made it work.</h2>
+  <div class="lessons">
+   <div><h3>Fix tracking before you scale.</h3><p>Every decision in the year rested on clean data. Spending before measuring only teaches you expensive lessons slowly.</p></div>
+   <div><h3>Let ads fund the learning. Let SEO collect the interest.</h3><p>Ads showed us which message sold. SEO and content then turned that message into pages that keep working long after the budget moves on.</p></div>
+   <div><h3>One message, many formats.</h3><p>The same story showed up in search, in ads, in short video and in the inbox: a cap that fits your hair and your personality. People trust what they meet more than once.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="band">
+ <div class="wrap">
+  <blockquote>“I have been working with Arsheen for about 1-1.5 years now and am overall happy with her services, especially the advertising results on Facebook/Instagram. She has more than doubled my sales since starting with her.”</blockquote>
+  <cite>Sunshine Caps Co.</cite>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="wrap">
+  <h2>Your brand could be the next $0 that becomes $50K.</h2>
+  <p>Tell us what you sell and where you are today. We will show you which of the three engines to start with.</p>
+  <a class="btn" href="https://calendly.com/amadigimedia/30min" target="_blank" rel="noopener">Book a free strategy call</a>
+ </div>
+</section>
+
+<footer><div class="wrap">Results are specific to SunshineCapsco and are not a guarantee of future performance. Brand figures from sunshinecaps.com.</div></footer>
+
+<script>
+(function(){
+ var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var c=document.getElementById('count');
+ function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ if(reduce){c.textContent='$50,000'}else{
+  var t0=null,dur=3200;
+  function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);c.textContent=fmt(50000*e);if(p<1){requestAnimationFrame(step)}else{c.parentNode.classList.add('done')}}
+  setTimeout(function(){requestAnimationFrame(step)},500);
+ }
+ var ch=document.getElementById('chart');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ch.classList.add('in');io.disconnect()}})},{threshold:.35});
+  io.observe(ch);
+ }else{ch.classList.add('in')}
+ function tilt(el,max){
+  if(reduce)return;
+  el.addEventListener('mousemove',function(ev){
+   var r=el.getBoundingClientRect(),x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;
+   el.style.setProperty('--ry',(x*max)+'deg');el.style.setProperty('--rx',(-y*max)+'deg');
+  });
+  el.addEventListener('mouseleave',function(){el.style.setProperty('--ry','0deg');el.style.setProperty('--rx','0deg')});
+ }
+ document.querySelectorAll('.eng').forEach(function(el){tilt(el,8)});
+ var hero=document.querySelector('.hero'),h=document.getElementById('hero3d'),stg=document.querySelector('.stage');
+ document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.getAttribute('data-go'));if(t)t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})})});
+ if(hero&&!reduce){
+  hero.addEventListener('pointermove',function(ev){
+   var r=hero.getBoundingClientRect(),x=ev.clientX-r.left,y=ev.clientY-r.top;
+   hero.style.setProperty('--mx',x+'px');hero.style.setProperty('--my',y+'px');
+   var px=x/r.width-.5,py=y/r.height-.5;
+   hero.querySelectorAll('.orb').forEach(function(o){var d=parseFloat(o.getAttribute('data-d'));o.style.translate=(px*d)+'px '+(py*d)+'px'});
+  });
+ }
+ if(stg&&h&&!reduce){
+  var yaw=0,pitch=0,vy=0,vx=0,drag=false,lx=0,ly=0;
+  var apply=function(){h.style.setProperty('--ry',yaw+'deg');h.style.setProperty('--rx',pitch+'deg')};
+  var coast=function(){if(drag)return;yaw+=vy;pitch=Math.max(-40,Math.min(40,pitch+vx));vy*=.94;vx*=.94;apply();if(Math.abs(vy)>.05||Math.abs(vx)>.05)requestAnimationFrame(coast)};
+  var end=function(){if(!drag)return;drag=false;h.classList.remove('drag');stg.classList.remove('grab');requestAnimationFrame(coast)};
+  stg.addEventListener('pointerdown',function(ev){if(ev.target.closest('.chip'))return;drag=true;lx=ev.clientX;ly=ev.clientY;h.classList.add('drag');stg.classList.add('grab')});
+  window.addEventListener('pointermove',function(ev){if(!drag)return;var dx=ev.clientX-lx,dy=ev.clientY-ly;lx=ev.clientX;ly=ev.clientY;vy=dx*.6;vx=-dy*.4;yaw+=vy;pitch=Math.max(-40,Math.min(40,pitch+vx));apply()});
+  window.addEventListener('pointerup',end);window.addEventListener('pointercancel',end);
+  stg.addEventListener('pointermove',function(ev){if(drag||ev.pointerType!=='mouse')return;var r=stg.getBoundingClientRect(),x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;h.style.setProperty('--hy',(x*24)+'deg');h.style.setProperty('--hx',(-y*18)+'deg')});
+  stg.addEventListener('pointerleave',function(){h.style.setProperty('--hy','0deg');h.style.setProperty('--hx','0deg')});
+ }
+ var st=null;
+ if(st&&!reduce){
+  var h=document.getElementById('hero3d');
+  st.addEventListener('mousemove',function(ev){
+   var r=st.getBoundingClientRect(),x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;
+   h.style.setProperty('--ry',(x*40)+'deg');h.style.setProperty('--rx',(-y*30)+'deg');
+  });
+  st.addEventListener('mouseleave',function(){h.style.setProperty('--ry','0deg');h.style.setProperty('--rx','0deg')});
+ }
+})();
+</script>
+</body>
+</html>
